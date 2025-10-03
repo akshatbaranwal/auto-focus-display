@@ -1,0 +1,29 @@
+# Compiled binary
+focus-display-on-cursor
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Backup files
+*.backup
+*.backup.*
+
+# Build artifacts
+*.dSYM/
+*.o
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.xcodeproj/
+*.xcworkspace/
+
+# Temporary files
+*.tmp
+.*.tmp
