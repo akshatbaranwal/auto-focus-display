@@ -13,7 +13,7 @@ NC='\033[0m' # No Color
 
 # Installation paths
 INSTALL_DIR="$HOME/bin"
-APP_DIR="$HOME/Applications"
+APP_DIR="/Applications"  # System-wide Applications folder
 LOG_DIR="$HOME/Library/Logs"
 
 BINARY_NAME="focus-display-on-cursor"

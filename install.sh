@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 # Installation paths
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 INSTALL_DIR="$HOME/bin"
-APP_DIR="$HOME/Applications"
+APP_DIR="/Applications"  # System-wide Applications folder
 LOG_DIR="$HOME/Library/Logs"
 AUTOMATOR_DIR="$HOME/Library/Mobile Documents/com~apple~Automator/Documents"
 
@@ -139,11 +139,10 @@ else
     echo -e "${GREEN}✓ Directory exists: $INSTALL_DIR${NC}"
 fi
 
+# /Applications should always exist, but check anyway
 if [ ! -d "$APP_DIR" ]; then
-    mkdir -p "$APP_DIR"
-    CREATED_DIRS+=("$APP_DIR")
-    echo -e "${GREEN}✓ Created $APP_DIR${NC}"
-    SUMMARY_ACTIONS+=("Created directory: $APP_DIR")
+    echo -e "${RED}✗ $APP_DIR does not exist (system folder missing?)${NC}"
+    exit 1
 else
     echo -e "${GREEN}✓ Directory exists: $APP_DIR${NC}"
 fi
